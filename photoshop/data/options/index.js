@@ -5,7 +5,7 @@ function save() {
     path: document.getElementById('path').value
   }, () => {
     const status = document.getElementById('status');
-    status.textContent = 'Options saved.';
+    status.textContent = chrome.i18n.getMessage('optionsSaveMSG');
     setTimeout(() => status.textContent = '', 750);
   });
 }
@@ -20,3 +20,7 @@ function restore() {
 }
 document.addEventListener('DOMContentLoaded', restore);
 document.getElementById('save').addEventListener('click', save);
+
+[...document.querySelectorAll('[data-i18n]')].forEach(e => {
+  e.textContent = chrome.i18n.getMessage(e.dataset.i18n);
+});

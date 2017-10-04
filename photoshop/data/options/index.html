@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Open in PDF Reader :: Options</title>
+  <title data-i18n="optionsTitle"></title>
   <style>
     body {
       padding: 10px;
@@ -21,16 +21,16 @@
 
 <body>
   <label>
-    Path to a PDF Reader executable:
+    Path to the Photoshop executable:
     <input type="path" id="path">
   </label>
-  <p>Example: <code>C:\Program Files (x86)\Adobe\AcroRd32.exe</code>
+  <p>Example: <code data-i18n="optionsPath"></code>
   <br>
-  If path is not provided, the default path is used.</p>
+  <span data-i18n="optionsMSG"></span></p>
 
   <br>
   <div>
-    <button id="save">Save</button>
+    <button id="save" data-i18n="optionsSaveButton"></button>
     <span id="status"></span>
   </div>
 

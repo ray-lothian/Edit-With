@@ -1,8 +1,10 @@
 'use strict';
 
+var _ = id => chrome.i18n.getMessage(id);
+
 function notify(message) {
   chrome.notifications.create({
-    title: 'Edit with Adobe Photoshop',
+    title: _('appTitle'),
     type: 'basic',
     iconUrl: 'data/icons/48.png',
     message
@@ -28,12 +30,12 @@ function download(url) {
                   resolve(d);
                 }
                 else {
-                  reject('cannot find the downloaded IMAGE file!');
+                  reject(_('bgError1'));
                 }
               });
             }
             else {
-              reject('download was interrupted');
+              reject(_('bgError2'));
             }
           }
         }
@@ -104,7 +106,7 @@ chrome.runtime.onMessage.addListener((request, sender) => {
   // add the context-menu
   chrome.contextMenus.create({
     id: 'open-in',
-    title: 'Edit with Adobe Photoshop',
+    title: _('appTitle'),
     contexts: ['image']
   });
   // FAQs & Feedback

@@ -1,0 +1,31 @@
+{
+    "appDesc": {
+        "message": "Adds a context menu item to send image links directly to Adobe Photoshop photo editor"
+    }, 
+    "appTitle": {
+        "message": "Edit with Adobe Photoshop"
+    }, 
+    "bgError1": {
+        "description": "", 
+        "message": "cannot find the downloaded IMAGE file!"
+    }, 
+    "bgError2": {
+        "description": "", 
+        "message": "Download was interrupted"
+    }, 
+    "optionsMSG": {
+        "message": "If path is not provided, OS command 'open' or 'start' is used to find the executable."
+    }, 
+    "optionsPath": {
+        "message": "C:\\Program Files(x86)\\Adobe\\Adobe Photoshop CSx\\Photoshop.exe"
+    }, 
+    "optionsSaveButton": {
+        "message": "Save"
+    }, 
+    "optionsSaveMSG": {
+        "message": "Options saved."
+    }, 
+    "optionsTitle": {
+        "message": "Edit with Photoshop :: Options"
+    }
+}

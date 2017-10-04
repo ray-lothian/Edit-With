@@ -1,10 +1,11 @@
 {
-  "name": "Edit with Adobe Photoshop",
+  "name": "__MSG_appTitle__",
   "short_name": "ewaphotoshop",
-  "description": "Adds a context menu item to send image links directly to Adobe Photoshop photo editor",
+  "description": "__MSG_appDesc__",
   "author": "Andy Portmen",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "manifest_version": 2,
+  "default_locale": "en",
   "permissions": [
     "storage",
     "tabs",
@@ -44,11 +45,5 @@
     "js": ["data/inject.js"],
     "run_at": "document_start",
     "all_frames": true
-  }],
-  "applications": {
-    "gecko": {
-      "id": "",
-      "strict_min_version": "52.0"
-    }
-  }
+  }]
 }
