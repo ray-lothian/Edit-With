@@ -1,3 +1,4 @@
+/* globals config */
 'use strict';
 
 var _ = id => chrome.i18n.getMessage(id);
@@ -47,28 +48,13 @@ function download(url) {
 
 function open(d) {
   chrome.storage.local.get({
-    path: ''
+    path: '',
+    quotes: true
   }, prefs => {
     chrome.runtime.sendNativeMessage('com.add0n.node', {
       permissions: ['child_process', 'os'],
-      args: [d.filename, prefs.path],
-      script: `
-        const os = require('os').platform();
-        let cmd = 'start Photoshop "' + args[0] +'"';
-        if (os === 'darwin') {
-          cmd = 'open -a "Adobe Photoshop CC" "' + args[0] +'"';
-        }
-        if (os.startsWith('win')) {
-          cmd = 'start "" Photoshop "' + args[0] +'"';
-        }
-        if (args[1]) {
-          cmd = args[1] + ' "' + args[0] + '"';
-        }
-        require('child_process').exec(cmd, (error, stdout, stderr) => {
-          push({error, stdout, stderr});
-          done();
-        });
-      `
+      args: [d.filename, prefs.path ? (prefs.quotes ? `"${prefs.path}"` : prefs.path) : ''],
+      script: config.script
     }, resp => {
       if (resp) {
         const msg = resp.stderr || resp.error || resp.stdout;
@@ -116,7 +102,7 @@ chrome.runtime.onMessage.addListener((request, sender) => {
     if (isFirefox ? !prefs.version : prefs.version !== version) {
       chrome.storage.local.set({version}, () => {
         chrome.tabs.create({
-          url: 'http://add0n.com/edit-with.html?from=photoshop&version=' + version +
+          url: 'http://add0n.com/edit-with.html?from=' + config.name + '&version=' + version +
             '&type=' + (prefs.version ? ('upgrade&p=' + prefs.version) : 'install')
         });
       });

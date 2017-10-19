@@ -8,31 +8,48 @@
       font-family: "Helvetica Neue",Helvetica,sans-serif;
       font-size: 13px;
     }
-    input {
+    input[type=text] {
       width: 100%;
+      margin-top: 5px;
+    }
+    input[type=checkbox] {
+      margin-right: 5px;
     }
     code {
-      font-size: 12px;
       color: #999;
-      font-family: monospace;
     }
+    [hbox] {
+      display: flex;
+    }
+    [vbox] {
+      display: flex;
+      flex-direction: column;
+    }
+    [flex="1"] {
+      flex: 1;
+    }
+
   </style>
 </head>
 
 <body>
-  <label>
-    Path to the Photoshop executable:
-    <input type="path" id="path">
+  <label vbox>
+    <span data-i18n="optionsLabel1"></span>
+    <input type="text" id="path" flex="1" data-i18n="optionsPath" data-i18nValue="placeholder">
   </label>
-  <p>Example: <code data-i18n="optionsPath"></code>
   <br>
   <span data-i18n="optionsMSG"></span></p>
-
   <br>
-  <div>
+  <label hbox align=center>
+    <input type="checkbox" id="quotes">
+    <span data-i18n="optionsLabel2"></span>
+  </label>
+
+
+  <p>
     <button id="save" data-i18n="optionsSaveButton"></button>
     <span id="status"></span>
-  </div>
+  </p>
 
   <script src="index.js"></script>
 </body>

@@ -1,20 +1,20 @@
 {
     "appDesc": {
-        "message": "Adds a context menu item to send image links directly to Adobe Photoshop photo editor"
+        "message": "Adds a context menu item to send image links directly to Paint.Net photo editor"
     },
     "appTitle": {
-        "message": "Edit with Adobe Photoshop"
+        "message": "Edit with Paint.Net"
     },
     "bgError1": {
         "description": "",
-        "message": "cannot find the downloaded IMAGE file!"
+        "message": "Cannot find the downloaded IMAGE file!"
     },
     "bgError2": {
         "description": "",
         "message": "Download was interrupted"
     },
     "optionsLabel1": {
-        "message": "Path to the Photoshop executable:"
+        "message": "Path to the Paint.Net executable:"
     },
     "optionsLabel2": {
         "message": "Use quotation around the input command"
@@ -23,7 +23,7 @@
         "message": "If path is not provided, OS command 'open' or 'start' is used to find the executable."
     },
     "optionsPath": {
-        "message": "e.g.: C:\\Program Files(x86)\\Adobe\\Adobe Photoshop CSx\\Photoshop.exe"
+        "message": "e.g.: C:\\Program Files\\paint.net\\PaintDotNet.exe"
     },
     "optionsSaveButton": {
         "message": "Save"
@@ -32,6 +32,6 @@
         "message": "Options saved."
     },
     "optionsTitle": {
-        "message": "Edit with Photoshop :: Options"
+        "message": "Edit with Paint.Net :: Options"
     }
 }
